@@ -1,9 +1,15 @@
 plugins {
     id 'java'
+    id 'info.solidsoft.pitest' version '1.15.0'
 }
 
 group = 'com.gildedrose'
 version = '1.0-SNAPSHOT'
+
+pitest {
+    junit5PluginVersion = '1.2.1'
+    pitestVersion = '1.15.2'
+}
 
 repositories {
     mavenCentral()
@@ -11,7 +17,10 @@ repositories {
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation platform('org.assertj:assertj-bom:3.25.1')
+    testImplementation('com.approvaltests:approvaltests:18.5.0')
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testImplementation('org.assertj:assertj-core')
 }
 
 test {
