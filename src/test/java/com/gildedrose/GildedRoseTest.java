@@ -22,7 +22,7 @@ class GildedRoseTest {
 
     private String doUpdateQuality(String name, int sellIn, int quality) {
         Item[] items = new Item[]{
-                new Item(name, sellIn, quality)
+                Item.of(name, sellIn, quality)
         };
         GildedRose sut = new GildedRose(items);
         sut.updateQuality();
